@@ -1,0 +1,17 @@
+<div class="chatbot">
+  <h3>Chat with Gemini</h3>
+
+  <div class="conversation">
+    <div *ngFor="let m of conversation" class="message" [attr.data-role]="m.role">
+      <strong>{{ m.role }}:</strong>
+      <div class="message-text">{{ m.text }}</div>
+    </div>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="send()" class="input-row">
+    <input formControlName="query" placeholder="Ask in natural language..." />
+    <button type="submit" [disabled]="loading">{{ loading ? 'Sending...' : 'Send' }}</button>
+  </form>
+
+  <div class="error" *ngIf="error">{{ error }}</div>
+</div>

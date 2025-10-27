@@ -1,0 +1,49 @@
+<div class="students-list">
+  <h2>Students</h2>
+
+  <div class="toolbar">
+    <button (click)="addStudent()">Add student</button>
+  </div>
+
+  <div class="table-wrapper" *ngIf="sortedStudents.length; else loading">
+    <table class="students-table">
+    <thead>
+      <tr>
+        <th (click)="sortBy('id')">ID</th>
+        <th (click)="sortBy('name')">Name</th>
+        <th (click)="sortBy('class')">Class</th>
+        <th (click)="sortBy('section')">Section</th>
+        <th (click)="sortBy('math')">Math</th>
+        <th (click)="sortBy('science')">Science</th>
+        <th (click)="sortBy('english')">English</th>
+        <th (click)="sortBy('total')">Total</th>
+        <th (click)="sortBy('grade')">Grade</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of sortedStudents">
+        <td>{{ s.id }}</td>
+        <td>{{ s.name }}</td>
+        <td>{{ s.class }}</td>
+        <td>{{ s.section }}</td>
+        <td>{{ s.math }}</td>
+        <td>{{ s.science }}</td>
+        <td>{{ s.english }}</td>
+        <td>{{ s.total }}</td>
+        <td>{{ s.grade }}</td>
+        <td>
+          <button (click)="viewDetails(s)">View</button>
+          <button (click)="editStudent(s)">Edit</button>
+          <button (click)="deleteStudent(s.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+
+  <ng-template #loading>Loading students...</ng-template>
+
+  <student-detail *ngIf="showDetail" [student]="selectedStudent"></student-detail>
+  <student-form *ngIf="showForm" [student]="selectedStudent" (saved)="onFormSaved($event)"></student-form>
+</div>

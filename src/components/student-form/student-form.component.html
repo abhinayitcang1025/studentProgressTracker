@@ -1,0 +1,53 @@
+<div class="student-form">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div>
+      <label>Name</label>
+      <input formControlName="name" />
+      <div *ngIf="form.get('name')?.touched && form.get('name')?.invalid" class="error">Name is required</div>
+    </div>
+
+    <div>
+      <label>Class</label>
+      <input formControlName="class" />
+      <div *ngIf="form.get('class')?.touched && form.get('class')?.invalid" class="error">Class is required</div>
+    </div>
+
+    <div>
+      <label>Section</label>
+      <input formControlName="section" />
+      <div *ngIf="form.get('section')?.touched && form.get('section')?.invalid" class="error">Section is required</div>
+    </div>
+
+    <div>
+      <label>Math</label>
+      <input type="number" formControlName="math" />
+      <div *ngIf="form.get('math')?.touched && form.get('math')?.invalid" class="error">Enter 0-100</div>
+    </div>
+
+    <div>
+      <label>Science</label>
+      <input type="number" formControlName="science" />
+      <div *ngIf="form.get('science')?.touched && form.get('science')?.invalid" class="error">Enter 0-100</div>
+    </div>
+
+    <div>
+      <label>English</label>
+      <input type="number" formControlName="english" />
+      <div *ngIf="form.get('english')?.touched && form.get('english')?.invalid" class="error">Enter 0-100</div>
+    </div>
+
+    <div>
+      <label>Total</label>
+      <input formControlName="total" />
+    </div>
+
+    <div>
+      <label>Grade</label>
+      <input formControlName="grade" />
+    </div>
+
+    <div class="actions">
+      <button type="submit">Save</button>
+    </div>
+  </form>
+</div>

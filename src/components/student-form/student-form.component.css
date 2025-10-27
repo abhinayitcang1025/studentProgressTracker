@@ -1,0 +1,40 @@
+.student-form {
+  padding: 0.5rem;
+  border: 1px solid #eee;
+  margin-top: 1rem;
+}
+
+.student-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.student-form input {
+  width: 100%;
+  padding: 0.35rem;
+  margin-bottom: 0.5rem;
+  box-sizing: border-box;
+}
+
+.error {
+  color: #b00020;
+  font-size: 0.85rem;
+}
+
+.actions {
+  margin-top: 0.5rem;
+}
+
+/* Layout form fields in two columns on wider screens */
+.student-form form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+.student-form form > div { width: 100%; }
+
+@media (max-width: 640px) {
+  .student-form form { grid-template-columns: 1fr; }
+  .student-form { padding: 0.5rem; }
+}

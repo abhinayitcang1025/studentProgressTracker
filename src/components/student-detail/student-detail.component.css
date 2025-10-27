@@ -1,0 +1,16 @@
+.student-detail {
+  padding: 0.5rem;
+  border: 1px solid #eee;
+  margin-top: 1rem;
+}
+
+.student-detail table { width: 100%; border-collapse: collapse; }
+.student-detail th, .student-detail td { border: 1px solid #ddd; padding: 0.4rem; }
+
+/* Responsive detail: allow horizontal scrolling on small screens */
+.student-detail { overflow-x: auto; }
+.student-detail table { min-width: 320px; }
+
+@media (max-width: 640px) {
+  .student-detail th, .student-detail td { font-size: 0.95rem; padding: 0.35rem; }
+}
