@@ -18,7 +18,7 @@ import { Student } from '../models/student';
  * const students$ = studentService.getStudents();
  */
 export class StudentService {
-  private baseUrl = '/students';
+  private baseUrl = 'http://localhost:3000/students';
 
   constructor(private http: HttpClient) {}
 

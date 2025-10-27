@@ -1,61 +1,6 @@
 {
   "students": [
     {
-      "id": 1,
-      "name": "Aarav Patel",
-      "class": "10",
-      "section": "A",
-      "math": 85,
-      "science": 78,
-      "english": 88,
-      "total": 251,
-      "grade": "A"
-    },
-    {
-      "id": 2,
-      "name": "Isha Verma",
-      "class": "9",
-      "section": "B",
-      "math": 92,
-      "science": 90,
-      "english": 84,
-      "total": 266,
-      "grade": "A+"
-    },
-    {
-      "id": 3,
-      "name": "Rohan Das",
-      "class": "10",
-      "section": "A",
-      "math": 70,
-      "science": 65,
-      "english": 72,
-      "total": 207,
-      "grade": "B"
-    },
-    {
-      "id": 4,
-      "name": "Meera Shah",
-      "class": "9",
-      "section": "A",
-      "math": 88,
-      "science": 82,
-      "english": 91,
-      "total": 261,
-      "grade": "A"
-    },
-    {
-      "id": 5,
-      "name": "Kabir Nair",
-      "class": "8",
-      "section": "C",
-      "math": 60,
-      "science": 58,
-      "english": 64,
-      "total": 182,
-      "grade": "C"
-    },
-    {
       "id": 6,
       "name": "Sara D'Souza",
       "class": "10",
@@ -68,14 +13,14 @@
     },
     {
       "id": 7,
-      "name": "Arjun Iyer",
-      "class": "8",
+      "name": "Abhinay L",
+      "class": "12",
       "section": "A",
-      "math": 75,
-      "science": 70,
-      "english": 78,
-      "total": 223,
-      "grade": "B+"
+      "math": 95,
+      "science": 89,
+      "english": 80,
+      "total": 264,
+      "grade": "A"
     },
     {
       "id": 8,
@@ -89,17 +34,6 @@
       "grade": "A"
     },
     {
-      "id": 9,
-      "name": "Ritvik Sharma",
-      "class": "10",
-      "section": "A",
-      "math": 68,
-      "science": 74,
-      "english": 70,
-      "total": 212,
-      "grade": "B"
-    },
-    {
       "id": 10,
       "name": "Priya Menon",
       "class": "8",
@@ -109,6 +43,17 @@
       "english": 79,
       "total": 241,
       "grade": "A"
+    },
+    {
+      "id": 11,
+      "name": "Atif Aslam",
+      "class": "H",
+      "section": "C",
+      "math": 55,
+      "science": 77,
+      "english": 90,
+      "total": 222,
+      "grade": "B+"
     }
   ]
 }

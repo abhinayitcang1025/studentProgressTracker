@@ -1,10 +1,6 @@
 <div class="students-list">
   <h2>Students</h2>
 
-  <div class="toolbar">
-    <button (click)="addStudent()">Add student</button>
-  </div>
-
   <div class="table-wrapper" *ngIf="sortedStudents.length; else loading">
     <table class="students-table">
     <thead>
