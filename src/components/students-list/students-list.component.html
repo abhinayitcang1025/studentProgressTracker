@@ -1,45 +1,66 @@
 <div class="students-list">
-  <h2>Students</h2>
-
-  <div class="table-wrapper" *ngIf="sortedStudents.length; else loading">
-    <table class="students-table">
-    <thead>
-      <tr>
-        <th (click)="sortBy('id')">ID</th>
-        <th (click)="sortBy('name')">Name</th>
-        <th (click)="sortBy('class')">Class</th>
-        <th (click)="sortBy('section')">Section</th>
-        <th (click)="sortBy('math')">Math</th>
-        <th (click)="sortBy('science')">Science</th>
-        <th (click)="sortBy('english')">English</th>
-        <th (click)="sortBy('total')">Total</th>
-        <th (click)="sortBy('grade')">Grade</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let s of sortedStudents">
-        <td>{{ s.id }}</td>
-        <td>{{ s.name }}</td>
-        <td>{{ s.class }}</td>
-        <td>{{ s.section }}</td>
-        <td>{{ s.math }}</td>
-        <td>{{ s.science }}</td>
-        <td>{{ s.english }}</td>
-        <td>{{ s.total }}</td>
-        <td>{{ s.grade }}</td>
-        <td>
-          <button (click)="viewDetails(s)">View</button>
-          <button (click)="editStudent(s)">Edit</button>
-          <button (click)="deleteStudent(s.id)">Delete</button>
-        </td>
-      </tr>
-    </tbody>
-    </table>
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="mb-0">Students</h2>
   </div>
 
-  <ng-template #loading>Loading students...</ng-template>
+  <div *ngIf="sortedStudents.length; else loading">
+    <div class="table-responsive">
+      <table class="table table-striped table-hover align-middle">
+        <thead class="table-light">
+          <tr>
+            <th (click)="sortBy('id')" style="cursor: pointer">ID</th>
+            <th (click)="sortBy('name')" style="cursor: pointer">Name</th>
+            <th (click)="sortBy('class')" style="cursor: pointer">Class</th>
+            <th (click)="sortBy('section')" style="cursor: pointer">Section</th>
+            <th (click)="sortBy('math')" style="cursor: pointer">Math</th>
+            <th (click)="sortBy('science')" style="cursor: pointer">Science</th>
+            <th (click)="sortBy('english')" style="cursor: pointer">English</th>
+            <th (click)="sortBy('total')" style="cursor: pointer">Total</th>
+            <th (click)="sortBy('grade')" style="cursor: pointer">Grade</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of sortedStudents">
+            <td>{{ s.id }}</td>
+            <td>{{ s.name }}</td>
+            <td>{{ s.class }}</td>
+            <td>{{ s.section }}</td>
+            <td>{{ s.math }}</td>
+            <td>{{ s.science }}</td>
+            <td>{{ s.english }}</td>
+            <td>{{ s.total }}</td>
+            <td>{{ s.grade }}</td>
+            <td>
+              <button class="btn btn-sm btn-primary me-1" (click)="viewDetails(s)">View</button>
+              <button class="btn btn-sm btn-warning text-white me-1" (click)="editStudent(s)">Edit</button>
+              <button class="btn btn-sm btn-danger" (click)="deleteStudent(s.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-  <student-detail *ngIf="showDetail" [student]="selectedStudent"></student-detail>
-  <student-form *ngIf="showForm" [student]="selectedStudent" (saved)="onFormSaved($event)"></student-form>
+  <ng-template #loading>
+    <div class="alert alert-info">Loading students...</div>
+  </ng-template>
+
+  <div class="row mt-3">
+    <div class="col-12 col-md-6 mb-3" *ngIf="showDetail">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <student-detail [student]="selectedStudent"></student-detail>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 mb-3" *ngIf="showForm">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <student-form [student]="selectedStudent" (saved)="onFormSaved($event)"></student-form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

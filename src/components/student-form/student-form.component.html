@@ -1,53 +1,58 @@
 <div class="student-form">
   <form [formGroup]="form" (ngSubmit)="submit()">
-    <div>
-      <label>Name</label>
-      <input formControlName="name" />
-      <div *ngIf="form.get('name')?.touched && form.get('name')?.invalid" class="error">Name is required</div>
+    <div class="row g-2">
+      <div class="col-12 col-md-6">
+        <label class="form-label">Name</label>
+        <input class="form-control" formControlName="name" />
+        <div *ngIf="form.get('name')?.touched && form.get('name')?.invalid" class="text-danger small">Name is required</div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <label class="form-label">Class</label>
+        <input class="form-control" formControlName="class" />
+        <div *ngIf="form.get('class')?.touched && form.get('class')?.invalid" class="text-danger small">Class is required</div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <label class="form-label">Section</label>
+        <input class="form-control" formControlName="section" />
+        <div *ngIf="form.get('section')?.touched && form.get('section')?.invalid" class="text-danger small">Section is required</div>
+      </div>
     </div>
 
-    <div>
-      <label>Class</label>
-      <input formControlName="class" />
-      <div *ngIf="form.get('class')?.touched && form.get('class')?.invalid" class="error">Class is required</div>
+    <div class="row g-2 mt-2">
+      <div class="col-12 col-md-4">
+        <label class="form-label">Math</label>
+        <input type="number" class="form-control" formControlName="math" />
+        <div *ngIf="form.get('math')?.touched && form.get('math')?.invalid" class="text-danger small">Enter 0-100</div>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <label class="form-label">Science</label>
+        <input type="number" class="form-control" formControlName="science" />
+        <div *ngIf="form.get('science')?.touched && form.get('science')?.invalid" class="text-danger small">Enter 0-100</div>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <label class="form-label">English</label>
+        <input type="number" class="form-control" formControlName="english" />
+        <div *ngIf="form.get('english')?.touched && form.get('english')?.invalid" class="text-danger small">Enter 0-100</div>
+      </div>
     </div>
 
-    <div>
-      <label>Section</label>
-      <input formControlName="section" />
-      <div *ngIf="form.get('section')?.touched && form.get('section')?.invalid" class="error">Section is required</div>
+    <div class="row g-2 mt-3">
+      <div class="col-6">
+        <label class="form-label">Total</label>
+        <input class="form-control" formControlName="total" readonly />
+      </div>
+      <div class="col-6">
+        <label class="form-label">Grade</label>
+        <input class="form-control" formControlName="grade" readonly />
+      </div>
     </div>
 
-    <div>
-      <label>Math</label>
-      <input type="number" formControlName="math" />
-      <div *ngIf="form.get('math')?.touched && form.get('math')?.invalid" class="error">Enter 0-100</div>
-    </div>
-
-    <div>
-      <label>Science</label>
-      <input type="number" formControlName="science" />
-      <div *ngIf="form.get('science')?.touched && form.get('science')?.invalid" class="error">Enter 0-100</div>
-    </div>
-
-    <div>
-      <label>English</label>
-      <input type="number" formControlName="english" />
-      <div *ngIf="form.get('english')?.touched && form.get('english')?.invalid" class="error">Enter 0-100</div>
-    </div>
-
-    <div>
-      <label>Total</label>
-      <input formControlName="total" />
-    </div>
-
-    <div>
-      <label>Grade</label>
-      <input formControlName="grade" />
-    </div>
-
-    <div class="actions">
-      <button type="submit">Save</button>
+    <div class="d-flex justify-content-end mt-3">
+      <button class="btn btn-primary" type="submit">Save</button>
     </div>
   </form>
 </div>

@@ -1,5 +1,4 @@
-/* Import Bootstrap's CSS (installed as dependency in package.json) */
-@import "~bootstrap/dist/css/bootstrap.min.css";
+/* Bootstrap CSS is loaded via angular.json styles array to ensure proper resolution */
 
 /* Global tweaks for the app */
 body {

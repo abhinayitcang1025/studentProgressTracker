@@ -2,14 +2,14 @@
   "students": [
     {
       "id": 6,
-      "name": "Sara D'Souza",
+      "name": "Siddesh",
       "class": "10",
       "section": "B",
       "math": 95,
-      "science": 97,
+      "science": 30,
       "english": 92,
-      "total": 284,
-      "grade": "A+"
+      "total": 217,
+      "grade": "B+"
     },
     {
       "id": 7,
@@ -20,28 +20,6 @@
       "science": 89,
       "english": 80,
       "total": 264,
-      "grade": "A"
-    },
-    {
-      "id": 8,
-      "name": "Anaya Joshi",
-      "class": "9",
-      "section": "B",
-      "math": 89,
-      "science": 85,
-      "english": 90,
-      "total": 264,
-      "grade": "A"
-    },
-    {
-      "id": 10,
-      "name": "Priya Menon",
-      "class": "8",
-      "section": "C",
-      "math": 80,
-      "science": 82,
-      "english": 79,
-      "total": 241,
       "grade": "A"
     },
     {

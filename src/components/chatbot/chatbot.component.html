@@ -1,17 +1,25 @@
 <div class="chatbot">
-  <h3>Chat with Gemini</h3>
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h5 class="card-title">Chat with Gemini</h5>
 
-  <div class="conversation">
-    <div *ngFor="let m of conversation" class="message" [attr.data-role]="m.role">
-      <strong>{{ m.role }}:</strong>
-      <div class="message-text">{{ m.text }}</div>
+      <div class="conversation mb-3">
+        <ul class="list-group">
+          <li *ngFor="let m of conversation" class="list-group-item" [ngClass]="{'list-group-item-secondary': m.role==='assistant'}" [attr.data-role]="m.role">
+            <div class="d-flex w-100 justify-content-between">
+              <small class="text-muted">{{ m.role }}</small>
+            </div>
+            <p class="mb-0">{{ m.text }}</p>
+          </li>
+        </ul>
+      </div>
+
+      <form class="d-flex" [formGroup]="form" (ngSubmit)="send()">
+        <input formControlName="query" class="form-control me-2" placeholder="Ask in natural language..." />
+        <button class="btn btn-primary" type="submit" [disabled]="loading">{{ loading ? 'Sending...' : 'Send' }}</button>
+      </form>
+
+      <div class="text-danger mt-2" *ngIf="error">{{ error }}</div>
     </div>
   </div>
-
-  <form [formGroup]="form" (ngSubmit)="send()" class="input-row">
-    <input formControlName="query" placeholder="Ask in natural language..." />
-    <button type="submit" [disabled]="loading">{{ loading ? 'Sending...' : 'Send' }}</button>
-  </form>
-
-  <div class="error" *ngIf="error">{{ error }}</div>
 </div>
