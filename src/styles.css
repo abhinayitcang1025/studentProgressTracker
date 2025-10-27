@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+/* Import Bootstrap's CSS (installed as dependency in package.json) */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+/* Global tweaks for the app */
+body {
+	background-color: #f8f9fa;
+}
+
+.main .content {
+	padding-top: 1rem;
+}
+
+/* Chat message alignment */
+.chatbot .conversation {
+	max-height: 40vh;
+	overflow: auto;
+	margin-bottom: 0.75rem;
+}
+.chatbot .message[data-role="user"] {
+	text-align: right;
+}
+.chatbot .message[data-role="assistant"] {
+	text-align: left;
+}
+
+/* Small helpers */
+.students-list .actions { margin-top: 0.75rem; }
+
